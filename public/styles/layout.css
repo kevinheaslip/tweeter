@@ -33,3 +33,58 @@ body {
  main {
   width: 90%;
  }
+
+.tweet {
+  border: 4px solid #545149;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.tweet:hover {
+  box-shadow: 8px 8px #c9cae1;
+}
+
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweetUsername {
+  color: #c9cae1;
+  font-weight: bold;
+}
+
+.tweet p {
+  font-weight: bold;
+}
+
+.tweet footer {
+  border-top: 4px solid #545149;
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweetPosted {
+  font-size: 18px;
+}
+
+.socialIcons {
+  color: #4056A1;
+}
+
+.fa-flag:hover {
+  color: #d69721;
+}
+
+.fa-retweet:hover {
+  color: #d69721;
+}
+
+.fa-heart:hover {
+  color: #d69721;
+}
