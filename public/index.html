@@ -31,21 +31,23 @@
       <span class="navTitle">tweeter</span>
       <span class ="navNewTweet">
         <div><b>Write</b> a new tweet</div>
-        <div class="navAngleDoubleDown"><i class="fa-solid fa-angles-down"></i><div>
+        <div><i class="fa-solid fa-angles-down"></i><div>
       </span>
     </nav>
 
-    <header>
+    <!-- Page header -->
+    <header class="pageHeader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <!-- <br> -->
       <div>
           <h2>Your Name</h2>
       </div>
     </header>
 
-    <main>
+    <!-- Page-specific (main) content here -->
+    <main class="mainContainer">
+      
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="post" action="/tweets/">
@@ -56,10 +58,35 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section>      
+      </section>
+      
+      <br>
+      
+      <section class="tweetContainer">
+        <article class="tweet">
+          <header>
+            <div>User Icon, Name</div>
+            <div class="tweetUsername">@username</div>
+          </header>
+          <br>
+          <p>Hello world!</p>
+          <br>
+          <footer>
+            <div class="tweetPosted">Date Posted</div>
+            <div class="socialIcons">
+              <i class="fa-solid fa-flag"></i>
+              <!-- this will not load for some reason, triple checked the link, isn't working -->
+              <i class="fa-sharp fa-solid fa-retweet"></i>
+              <i class="fa-sharp fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+
+      <br>
+
     </main>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
   </body>
+
 </html>
