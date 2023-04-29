@@ -67,4 +67,17 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  $(function() {
+    // event listener for form submit to prevent default behaviour
+    $("form").on("submit", function(event) {
+      console.log('Button clicked, performing ajax call...');
+      event.preventDefault();
+      // use jQuery library to make an ajax POST request to the server with the serialized form data
+      const data = $(this).serialize();
+      $.post("/tweets/", data, function() {
+        console.log("Success, tweet sent to server");
+      });
+    })
+  });
+
 });
