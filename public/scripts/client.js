@@ -35,13 +35,24 @@ $(document).ready(function() {
   const renderTweets = function(data) {
     for (const tweet of data) {
       const $tweet = createTweetElement(tweet);
-      $('.tweetContainer').append($tweet);
+      $('.tweetContainer').prepend($tweet);
     }
   };
 
+  const loadTweets = function() {
+    $.getJSON("/tweets/", function(data) {
+      console.log("Success, tweets retrieved from server");
+      $('.tweetContainer').html("");
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
+
   $(function() {
     // event listener for form submit to prevent default behaviour
-    $("form").on("submit", function(event) {
+    $("#tweet-form").on("submit", function(event) {
+      const form = $(this);
       console.log('Button clicked, performing ajax call...');
       event.preventDefault();
       const data = $(this).serialize();
@@ -53,18 +64,12 @@ $(document).ready(function() {
         // use jQuery library to make an ajax POST request to the server with the serialized form data
         $.post("/tweets/", data, function() {
           console.log("Success, tweet sent to server");
+          // clear tweet text from form
+          form.trigger("reset");
+
+          loadTweets();
         });
       }
     })
   });
-
-  const loadTweets = function() {
-    $.getJSON("/tweets/", function(data) {
-      console.log("Success, tweets retrieved from server");
-      renderTweets(data);
-    });
-  };
-
-  loadTweets();
-
 });
