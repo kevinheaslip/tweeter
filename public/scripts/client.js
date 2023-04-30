@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function() {
+  // convert potentially insecure text from user
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   // takes in a tweet object, returns a tweet <article> element containing the entire HTML structure of the tweet
   const createTweetElement = function(tweetData) {
     const $tweet = $(`<article class="tweet">
@@ -16,7 +23,7 @@ $(document).ready(function() {
         <div class="tweetUsername">${tweetData.user.handle}</div>
       </header>
       <br>
-      <p>${tweetData.content.text}</p>
+      <p>${escape(tweetData.content.text)}</p>
       <br>
       <footer>
         <div class="tweetPosted">${timeago.format(tweetData.created_at)}</div>
@@ -39,6 +46,7 @@ $(document).ready(function() {
     }
   };
 
+  // fetches tweet JSON, clears tweet container and renders tweets
   const loadTweets = function() {
     $.getJSON("/tweets/", function(data) {
       console.log("Success, tweets retrieved from server");
@@ -49,8 +57,8 @@ $(document).ready(function() {
 
   loadTweets();
 
+  // event listener for form submit to prevent default behaviour and make an ajax request if conditions are met
   $(function() {
-    // event listener for form submit to prevent default behaviour
     $("#tweet-form").on("submit", function(event) {
       const form = $(this);
       console.log('Button clicked, performing ajax call...');
