@@ -66,7 +66,6 @@ $(document).ready(function() {
           console.log("Success, tweet sent to server");
           // clear tweet text from form
           form.trigger("reset");
-
           loadTweets();
         });
       }
