@@ -57,17 +57,21 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // event listener for form submit to prevent default behaviour and make an ajax request if conditions are met
+  // event listener for form submit to prevent default behaviour and make an ajax request if conditions are met, if they aren't met display a relevant error
   $(function() {
     $("#tweet-form").on("submit", function(event) {
-      const form = $(this);
       console.log('Button clicked, performing ajax call...');
       event.preventDefault();
+
+      const tweetText = $("#tweet-text");
+      const errMsg = $(".error-message");
+      const form = $(this);
       const data = $(this).serialize();
+
       if ($("#tweet-text").val().length > 140) {
-        alert("Sorry, your tweet is longer than 140 characters!");
-      } else if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-        alert("You are trying to submit an empty tweet, please try again.");
+        errMsg.html('Your tweet is longer than 140 characters!').slideDown();
+      } else if (tweetText.val() === "" || tweetText.val() === null) {
+        errMsg.html('You are trying to submit an empty tweet, please try again.').slideDown();
       } else {
         // use jQuery library to make an ajax POST request to the server with the serialized form data
         $.post("/tweets/", data, function() {
