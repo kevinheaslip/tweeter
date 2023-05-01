@@ -3,6 +3,7 @@ $(document).ready(function() {
   const charCounter = function() {
     const maxChar = 140;
     $("#tweet-text").on("keyup", function() {
+      // slide up any current error messages
       $(".error-message").slideUp();
       let currentChar = $(this).val().length;
       let remainingChar = maxChar - currentChar;
