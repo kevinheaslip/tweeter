@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -28,21 +29,21 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="navContainer">
-      <span class="navTitle">tweeter</span>
-      <span class ="navNewTweet">
+    <nav class="nav-container">
+      <span class="nav-title">tweeter</span>
+      <span class ="nav-new-tweet">
         <div><b>Write</b> a new tweet</div>
         <div><i class="fa-solid fa-angles-down"></i><div>
       </span>
     </nav>
 
     <!-- Page header -->
-    <header class="pageHeader">
+    <header class="page-header">
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex.png" alt="User profile image"> 
       </div>
       <div>
-          <h2>Your Name</h2>
+          <p><b>Your</b> Name</p>
       </div>
     </header>
 
@@ -59,12 +60,12 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-        <div class="error-message"></div>
+        <div class="error-message" />
       </section>
       
       <br>
       
-      <section class="tweetContainer" />
+      <section class="tweet-container" />
 
       <br>
 
