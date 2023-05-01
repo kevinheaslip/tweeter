@@ -20,14 +20,14 @@ $(document).ready(function() {
           <span><img src="${tweetData.user.avatars}" alt="User avatar image"></span>
           <span>${tweetData.user.name}</span>
         </div>
-        <div class="tweetUsername">${tweetData.user.handle}</div>
+        <div class="tweet-username">${tweetData.user.handle}</div>
       </header>
       <br>
       <p>${escape(tweetData.content.text)}</p>
       <br>
       <footer>
-        <div class="tweetPosted">${timeago.format(tweetData.created_at)}</div>
-        <div class="socialIcons">
+        <div class="tweet-posted">${timeago.format(tweetData.created_at)}</div>
+        <div class="social-icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-sharp fa-solid fa-retweet"></i>
           <i class="fa-sharp fa-solid fa-heart"></i>
@@ -42,7 +42,7 @@ $(document).ready(function() {
   const renderTweets = function(data) {
     for (const tweet of data) {
       const $tweet = createTweetElement(tweet);
-      $('.tweetContainer').prepend($tweet);
+      $('.tweet-container').prepend($tweet);
     }
   };
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.getJSON("/tweets/", function(data) {
       console.log("Success, tweets retrieved from server");
-      $('.tweetContainer').html("");
+      $('.tweet-container').html("");
       renderTweets(data);
     });
   };
@@ -83,4 +83,5 @@ $(document).ready(function() {
       }
     })
   });
+
 });
