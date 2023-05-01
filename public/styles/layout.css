@@ -69,7 +69,7 @@ body {
   justify-content: space-between;
 }
 
-.tweetUsername {
+.tweet-username {
   color: #c9cae1;
   font-weight: bold;
 }
@@ -86,11 +86,11 @@ body {
   justify-content: space-between;
 }
 
-.tweetPosted {
+.tweet-posted {
   font-size: 18px;
 }
 
-.socialIcons {
+.social-icons {
   color: #4056A1;
 }
 
