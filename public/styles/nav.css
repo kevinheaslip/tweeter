@@ -1,4 +1,4 @@
-.navContainer {
+.nav-container {
   background-color: #4056A1;
   color: #FFFFFF;
   height: 120px;
@@ -13,12 +13,12 @@
   align-items: flex-end;
 }
 
-.navTitle {
+.nav-title {
   font-family: 'Bungee', cursive;
   font-size: 40px;
 }
 
-.navNewTweet {
+.nav-new-tweet {
   display:flex;
   flex-direction: column;
   align-items: center;
