@@ -18,21 +18,17 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
+  font-size: 1.5em;
   width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: no-wrap;
   align-items: center;
+  align-content: center;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- main {
-  width: 90%;
- }
 
  #tweet-text {
   padding-top: 0.5em;
@@ -104,4 +100,63 @@ body {
 
 .fa-heart:hover {
   color: #d69721;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 420px) {
+  .header-and-tweets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-header {
+    width: 100%;
+  }
+
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 1023px) {
+  .header-and-tweets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-header {
+    width: 100%;
+  }
+
+  .main-container {
+    width: 90%
+  }
+}
+
+/* Laptops / Desktops*/
+@media only screen and (min-width: 1024px) {
+  .header-and-tweets {
+    padding-top: 200px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .page-header {
+    width: 33.3%;
+    height: 400px;
+  }
+
+  .empty-column {
+    width: 10%;
+  }
+
+  .main-container {
+    width: 56.6%;
+  }
 }
