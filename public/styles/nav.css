@@ -1,5 +1,4 @@
 .nav-container {
-  background-color: #4056A1;
   color: #FFFFFF;
   height: 120px;
   width: 100%;
@@ -15,15 +14,37 @@
 
 .nav-title {
   font-family: 'Bungee', cursive;
-  font-size: 40px;
+  font-size: 1.5em;
 }
 
 .nav-new-tweet {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .fa-angles-down {
   color: red;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 420px) {
+  .nav-container {
+    background-color: transparent;
+    position: absolute;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 1023px) {
+  .nav-container {
+    position: absolute;
+  }
+}
+
+/* Laptops / Desktops*/
+@media only screen and (min-width: 1024px) {
+  .nav-container {
+    background-color: #4056A1;
+  }
 }
