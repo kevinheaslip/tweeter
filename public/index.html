@@ -37,39 +37,39 @@
       </span>
     </nav>
 
-    <!-- Page header -->
-    <header class="page-header">
-      <div>
-          <img src="/images/profile-hex.png" alt="User profile image"> 
-      </div>
-      <div>
-          <p><b>Your</b> Name</p>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="mainContainer">
-      
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form id="tweet-form" method="post" action="/tweets/">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit" id="submit-tweet">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-        <div class="error-message" />
-      </section>
-      
-      <br>
-      
-      <section class="tweet-container" />
-
-      <br>
-
-    </main>
+    <div class="header-and-tweets">
+      <!-- Page header -->
+      <header class="page-header">
+        <div>
+            <img src="/images/profile-hex.png" alt="User profile image"> 
+        </div>
+        <div class="header-name">
+            <p><b>Kevin</b> Heaslip</p>
+        </div>
+      </header>
+      <div class="empty-column"></div>
+      <!-- Page-specific (main) content here -->
+      <main class="main-container">
+        
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form id="tweet-form" method="post" action="/tweets/">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit" id="submit-tweet">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <div class="error-message" />
+        </section>
+        
+        <br>
+        <section class="tweet-container" />
+        <br>
+  
+      </main>
+    </div>
 
   </body>
 
