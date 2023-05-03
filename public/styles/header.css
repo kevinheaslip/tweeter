@@ -3,11 +3,14 @@
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: #FFFFFF;
   height: 520px;
-  width: 100%;
   padding-top: 120px;
   display: flex;
   flex-direction: column;
-  flex-wrap: no-wrap;
   justify-content: center;
   align-items: center;
+  align-content: space-around;
+}
+
+.header-name {
+  font-size: 40px;
 }
